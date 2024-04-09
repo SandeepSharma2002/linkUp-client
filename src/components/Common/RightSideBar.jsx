@@ -64,10 +64,9 @@ export const RightSideBar = () => {
           </Link>
         </li>
         <li class="relative">
-          <button class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 hover:text-black hover:shadow">
-            <FaRegBell size={20} onClick={() => getNotifications()} />
-          </button>
-          {showNotifications && <Notification />}
+          <Link to="/notifications" class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 hover:text-black hover:shadow">
+            <FaRegBell size={20} />
+          </Link>
         </li>
         <li class="">
           <button
