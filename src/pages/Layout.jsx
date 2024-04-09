@@ -15,11 +15,11 @@ export const Layout = () => {
     }
   }, [navigate, isLoggedIn, access_token]);
 
-  useEffect(() => {
-    if (window.location.pathname === "/") {
-      navigate("/home");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (window.location.pathname === "/") {
+  //     navigate("/");
+  //   }
+  // }, [navigate]);
 
   return (
     <div className="flex w-screen h-screen overflow-x-hidden">

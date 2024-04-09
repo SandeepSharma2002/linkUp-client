@@ -28,7 +28,7 @@ export const BottomNavigation = () => {
       <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
         <Link
         onClick={()=>{setSelectedTab("Home"); setShowEditor(false)}}
-          to="/home"
+          to="/"
           class="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
         >
           <TiHome
@@ -42,7 +42,7 @@ export const BottomNavigation = () => {
 
         <Link
         onClick={()=>{setSelectedTab("Notifications"); setShowEditor(false)}}
-          to="/home/notifications"
+          to="/notifications"
           class="inline-flex flex-col items-center justify-center px-5 border-e border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
         >
           <GoBellFill

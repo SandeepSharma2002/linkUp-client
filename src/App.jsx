@@ -13,9 +13,9 @@ const App = () => {
     <div className="w-screen h-screen">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/home" element={<HomeLayout />}>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/home/notifications" element={<Notification />} />
+          <Route path="/" element={<HomeLayout />}>
+            <Route path="" element={<HomePage />} />
+            <Route path="notifications" element={<Notification />} />
           </Route>
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/user-settings" element={<UserSetting />} />

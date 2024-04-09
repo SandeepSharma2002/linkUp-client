@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../imgs/blog-transparent.png";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
