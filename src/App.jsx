@@ -10,7 +10,7 @@ import { Notification } from "./components/Common/Notification";
 
 const App = () => {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen dark:bg-gray-900">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomeLayout />}>

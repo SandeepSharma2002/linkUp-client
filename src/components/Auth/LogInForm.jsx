@@ -20,7 +20,7 @@ export const LogInForm = () => {
           toast.success("Logged In Successfully");
           localStorage.setItem("access_token", JSON.stringify(res.data.token));
           dispatch(logInUser(res.data.userDetails));
-          setTimeout(() => navigate("/home"), 2000);
+          setTimeout(() => navigate("/"), 2000);
         }
       })
       .catch((err) => {
@@ -29,8 +29,8 @@ export const LogInForm = () => {
       });
   };
   return (
-    <div className="w-screen h-screen grid place-items-center">
-      <div className=" w-4/5 lg:w-2/3 2xl:w-1/2 p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center content rounded-xl border border-slate-400">
+    <div className="w-screen h-screen grid place-items-center dark:text-white dark:bg-gray-900">
+      <div className=" w-4/5 lg:w-2/3 2xl:w-1/2 p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center content rounded-xl border border-slate-400 dark:bg-gray-900">
         <div className="mb-3 h-auto">
           <svg
             xmlns="http://www.w3.org/2000/svg"

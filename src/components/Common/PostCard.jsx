@@ -92,7 +92,7 @@ export const PostCard = ({ post, type}) => {
   };
 
   return (
-    <li class="py-6 text-base border-b z-0 border-slate-200 last:border-0 bg-white rounded-lg dark:bg-gray-900">
+    <li class="py-6 text-base border-b z-0 border-slate-200 last:border-0">
       <article class="flex justify-between items-center mb-2">
         <div class="flex items-center">
           <img
@@ -115,7 +115,7 @@ export const PostCard = ({ post, type}) => {
           <button
             onBlur={() => setTimeout(() => setShowDropDown(false), 300)}
             onClick={() => setShowDropDown(!showDropDown)}
-            class="inline-flex items-center p-2 text-sm rotate-90 font-medium text-center text-gray-500 dark:text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            class="inline-flex items-center p-2 text-sm rotate-90 font-medium text-center text-gray-500 dark:text-gray-400 rounded-lg hover:bg-gray-100 focus:outline-none  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             type="button"
           >
             <svg
@@ -166,7 +166,7 @@ export const PostCard = ({ post, type}) => {
           )}
         </div>
       </article>
-      <div className="my-2" dangerouslySetInnerHTML={{ __html: post.des}} />
+      <div className="my-2 dark:text-white" dangerouslySetInnerHTML={{ __html: post.des}} />
 
       <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2 py-1 rounded dark:bg-blue-900 dark:text-blue-300">
         {post?.title}

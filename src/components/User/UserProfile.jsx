@@ -36,7 +36,7 @@ export const UserProfile = () => {
     <form id="login" onSubmit={handleSubmit} className="px-8 my-4 h-full overflow-y-auto hide-scroll">
       <div className="">
         <div className=" mx-auto ">
-          <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5 bg-white dark:bg-gray-800">
+          <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5">
             <div className="flex items-center">
               <p className="text-lg text-gray-800 dark:text-gray-100 font-bold">
                 Profile
@@ -399,7 +399,7 @@ export const UserProfile = () => {
             </div>
           </div>
         </div>
-        <div className=" mx-auto bg-white dark:bg-gray-800 mt-4 rounded">
+        <div className=" mx-auto  mt-4 rounded">
           <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5">
             <div className="flex items-center">
               <p className="text-lg text-gray-800 dark:text-gray-100 font-bold">
@@ -741,7 +741,7 @@ export const UserProfile = () => {
                 </div>
             </div> */}
         <div className=" mx-auto w-11/12 xl:w-full">
-          <div className="w-full py-4 sm:px-0 bg-white dark:bg-gray-800 flex justify-end">
+          <div className="w-full py-4 sm:px-0 flex justify-end">
             <button className="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 dark:bg-gray-700 rounded text-indigo-600 dark:text-indigo-600 px-6 py-2 text-xs mr-4">
               Cancel
             </button>

@@ -44,10 +44,10 @@ export const SideBar = () => {
   ];
   return (
     <>
-      <aside class="fixed z-50 lg:relative ">
+      <aside class="fixed z-40 lg:relative dark:bg-gray-700 dark:border-gray-600">
         <input type="checkbox" class="peer hidden" id="sidebar-open" />
         <label
-          class="peer-checked:rounded-full peer-checked:p-2 min-w-full peer-checked:left-56 transition-all duration-200 absolute top-8 -translate-y-1/2 z-50 mx-5 cursor-pointer lg:hidden"
+          class=" peer-checked:rounded-full peer-checked:p-2 min-w-full peer-checked:left-56 transition-all duration-200 absolute top-8 -translate-y-1/2 z-50 mx-5 cursor-pointer lg:hidden"
           for="sidebar-open"
         >
           <svg
@@ -67,9 +67,9 @@ export const SideBar = () => {
         </label>
         <nav
           aria-label="Sidebar Navigation"
-          class="peer-checked:w-72 left-0 z-10 flex h-screen w-0 border-r border-slate-200 flex-col overflow-hidden bg-slate-100 text-white transition-all lg:h-screen lg:w-72"
+          class="peer-checked:w-72 pb-16 left-0 z-10 flex h-screen w-0 border-r border-slate-200 flex-col overflow-hidden bg-slate-100 text-white dark:bg-gray-700 dark:border-gray-600 transition-all lg:h-screen lg:w-72"
         >
-          <Link to='/home' class="bg-slate-100 mt-5 py-4 pl-10 lg:mt-10 text-5xl text-black">
+          <Link to='/home' class="mt-5 py-4 pl-10 lg:mt-10 text-5xl text-black">
             LinkUp
           </Link>
           <ul class="mt-8 space-y-3 md:mt-20">
@@ -81,7 +81,7 @@ export const SideBar = () => {
               >
                 <Link
                   // to={tab.to}
-                  class={` flex w-full space-x-2  px-10 py-4 text-gray-600 focus:outline-none ${
+                  class={` flex w-full space-x-2  px-10 py-4 text-gray-600 dark:text-white focus:outline-none ${
                     selectedTab === tab.label
                       ? " bg-blue-600 rounded-none text-white hover:bg-blue-700"
                       : "hover:bg-blue-400 hover:text-white"
@@ -93,116 +93,19 @@ export const SideBar = () => {
               </li>
             ))}
           </ul>
-          
 
           <div class="my-6 mt-auto ml-10 flex cursor-pointer">
             <div>
               <img class="h-12 w-12 rounded-full" src={image} />
             </div>
             <div class="ml-3">
-              <p class="font-medium text-black">{username}</p>
-              <p class="text-sm text-gray-600">{email}</p>
+              <p class="font-medium text-black dark:text-white">{username}</p>
+              <p class="text-sm text-gray-600 dark:text-white">{email}</p>
             </div>
           </div>
         </nav>
       </aside>
-      {/* <div className="h-screen py-3 space-y-2 w-80 glass text-dark-grey hidden md:inline">
-        <div className="flex items-center p-2 space-x-4">
-          <img
-            src={image}
-            alt="User Proile"
-            className="w-12 h-12 rounded-full bg-gray-500"
-          />
-          <div>
-            <h2 className="text-lg font-semibold">{username}</h2>
-            <span className="flex items-center space-x-1">
-              <p className="text-xs hover:underline text-gray-400">{email}</p>
-            </span>
-          </div>
-        </div>
-        <div className="divide-y divide-grey transition-all duration-500">
-          <ul className="pt-2 pb-4 space-y-1 text-xl text-white">
-            {SidebarTabs.map((tab) => (
-              <li
-                className={`border-transparent border-l-4 ${
-                  selectedTab === tab.label ?
-                  "border-l-heading-d bg-white/10 text-heading-d font-semibold":"hover:bg-white/10  hover:border-heading-d hover:text-grey hover:font-semibold "
-                }`}
-                onClick={() => setSelectedTab(tab.label)}
-                key={tab.label}
-              >
-                <Link
-                  rel="noopener noreferrer"
-                  to={tab.to}
-                  className="flex items-center p-2 space-x-3 rounded-md"
-                >
-                  {tab.icon}
-                  <span>{tab.label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <ul className="pt-4 pb-2 flex flex-col space-y-1 text-xl h-full text-white">
-            <li
-    
-              className={`border-transparent border-l-4 ${
-                selectedTab === "Settings" ?
-                "border-l-heading-d bg-white/10 text-heading-d font-semibold":"hover:bg-white/10  hover:border-heading-d hover:text-grey hover:font-semibold "
-              }`}
-              
-              onClick={() => setSelectedTab("Settings")}
-            >
-              <Link
-                rel="noopener noreferrer"
-                to="/user/settings"
-                className="flex items-center p-2 space-x-3 rounded-md"
-              >
-                <IoSettings size={20} />
-                <span>Settings</span>
-              </Link>
-            </li>
-            <li
-              className={`border-transparent border-l-4 ${
-                selectedTab === "Contact" ?
-                "border-l-heading-d bg-white/10 text-heading-d font-semibold":"hover:bg-white/10  hover:border-heading-d hover:text-grey hover:font-semibold "
-              }`}
-              onClick={() => setSelectedTab("Contact")}
-            >
-              <Link
-                rel="noopener noreferrer"
-                to="/contact-us"
-                className="flex items-center p-2 space-x-3 rounded-md"
-              >
-                <GrContact size={20} />
-                <span>Contact Us</span>
-              </Link>
-            </li>
-            <li className="hover:bg-white/10 border-l-4 border-transparent hover:border-heading-d hover:text-grey hover:font-semibold">
-              <button
-                onClick={handleSignOut}
-                className="flex items-center p-2 space-x-3 rounded-md"
-              >
-                <LuDoorOpen size={20} />
-                <span>Logout</span>
-              </button>
-            </li>
-
-            <li className="mx-2">
-              <button
-                type="button"
-                onClick={() => {
-                  setShowModal(true);
-                  setMode("add");
-                }}
-                className="flex gap-2 mt-4 items-center justify-center bg-btn-color text-white w-full mb-4 px-4 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150 mx-auto disabled:bg-opacity-70 text-center"
-              >
-                <TfiWrite className="text-black" size={20} />{" "}
-                <span>New Feed</span>
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div> */}
+     
       {showModal && <CreatePostModal setShowModal={setShowModal} mode={mode} />}
     </>
   );

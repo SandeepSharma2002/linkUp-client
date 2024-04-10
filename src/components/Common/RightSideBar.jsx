@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../Store/Slices/UserSlice";
 import Post from "../../Services/Post/Post";
+import { FaCircleUser } from "react-icons/fa6";
 
 export const RightSideBar = () => {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -40,38 +41,28 @@ export const RightSideBar = () => {
         .catch((err) => console.log(err));
   };
   return (
-    <aside class="relative z-30  border-l border-slate-200 bg-slate-100 w-72 hidden md:flex flex-col">
-      <ul class="flex justify-center items-center mt-4 space-x-6 sm:mt-0 h-16 border-b border-slate-200">
+    <aside class="relative z-50  border-l border-slate-200 bg-slate-100 w-72 hidden md:flex flex-col dark:bg-gray-700 dark:border-gray-600">
+      <ul class="flex justify-center items-center mt-4 space-x-6 sm:mt-0 h-16 border-b border-slate-200 dark:border-gray-600 dark:text-white">
         <li class="">
           <Link
             to="/profile"
-            class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 hover:text-black hover:shadow"
+            class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 dark:border-gray-600 dark:text-black hover:text-black hover:shadow"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <FaCircleUser size={20} />
           </Link>
         </li>
         <li class="relative">
-          <Link to="/notifications" class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 hover:text-black hover:shadow">
+          <Link
+            to="/notifications"
+            class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 dark:border-gray-600 dark:text-black hover:text-black hover:shadow"
+          >
             <FaRegBell size={20} />
           </Link>
         </li>
         <li class="">
           <button
             onClick={handleSignOut}
-            class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 hover:text-black hover:shadow"
+            class="flex h-8 w-8 items-center justify-center rounded-xl border dark:border-gray-600 text-gray-600 dark:text-black hover:text-black hover:shadow"
           >
             <LuDoorOpen size={20} />
           </button>
@@ -96,7 +87,7 @@ export const RightSideBar = () => {
         <input
           type="name"
           name="search"
-          class="h-12 w-full rounded-md border border-gray-100 bg-white py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
+          class="h-12 w-full rounded-md border border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-600 py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
           placeholder="Search for anything"
         />
       </div>

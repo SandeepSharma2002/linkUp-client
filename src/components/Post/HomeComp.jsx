@@ -64,9 +64,8 @@ export const HomeComp = () => {
   }, [activeTab, postRefresh, update]);
 
   return (
-    <section className="relative w-full overflow-y-auto hide-scroll h-full">
-      <div className="fixed h-[64px] flex justify-center items-center pl-12  sm:pl-0 px-4 border-b w-full md:sticky z-40 bg-slate-100 top-0 left-0 border-slate-200">
-       
+    <section className="relative w-full overflow-y-auto hide-scroll h-full  dark:bg-gray-900 ">
+      <div className="fixed h-[64px] flex justify-center bg-slate-100 items-center pl-12  sm:pl-0 px-4 border-b w-full md:sticky z-10  top-0 left-0 border-slate-200 dark:border-gray-600 dark:bg-gray-700">
        <label htmlFor="\" className=" relative"><svg
           class="absolute left-2 top-3 ml-2 block h-5 w-5 text-gray-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +84,7 @@ export const HomeComp = () => {
         <input
           type="name"
           name="search"
-          class="h-12 rounded-md border border-gray-100 bg-white  xl:w-[540px] min-w-[300px] py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
+          class="h-12 rounded-md border border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-600  xl:w-[540px] min-w-[300px] py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
           placeholder="Search for anything"
         />
         </label> 
@@ -94,7 +93,7 @@ export const HomeComp = () => {
         <Loader />
       ) : (
         <>
-          <ul className="mt-[120px] md:mt-0 px-4">
+          <ul className="mt-16 md:mt-0 px-4">
             {postData?.map((post) => (
               <PostCard post={post} type={activeTab} key={post?._id} />
             ))}

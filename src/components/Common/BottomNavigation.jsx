@@ -21,7 +21,7 @@ export const BottomNavigation = () => {
 
   return (
     <div
-      class={`absolute bottom-0 left-0 z-20 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 ${
+      class={`fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 ${
         !showEditor && "overflow-hidden"
       }
     `}
@@ -96,7 +96,7 @@ export const BottomNavigation = () => {
         </button>
         <Link
           onClick={() => {
-            setSelectedTab("Chats");
+            // setSelectedTab("Chats");
             setShowEditor(false);
           }}
           // to="/chats"
