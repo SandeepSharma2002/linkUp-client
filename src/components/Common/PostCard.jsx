@@ -105,7 +105,7 @@ export const PostCard = ({ post, type}) => {
               {post?.author?.username}
             </p>
             <p class=" text-gray-600 dark:text-gray-400">
-              <time pubdate datetime="2022-02-08" title="February 8th, 2022">
+              <time title="February 8th, 2022">
                 {publishedDate}
               </time>
             </p>
@@ -166,7 +166,7 @@ export const PostCard = ({ post, type}) => {
           )}
         </div>
       </article>
-      <div className="my-2 dark:text-white" dangerouslySetInnerHTML={{ __html: post.des}} />
+      <div className="my-2 dark:text-white" dangerouslySetInnerHTML={{ __html: post?.des}} />
 
       <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2 py-1 rounded dark:bg-blue-900 dark:text-blue-300">
         {post?.title}
@@ -199,7 +199,7 @@ export const PostCard = ({ post, type}) => {
       {commentsWrapper && (
         <>
           <CommentCard
-            post_Id={post._id}
+            post_Id={post?._id}
             author={post?.author?._id}
             getPostComment={getPostComment}
             setTotalComment={setTotalComment}
@@ -209,7 +209,7 @@ export const PostCard = ({ post, type}) => {
           />
           {commentData.map((comment) => (
             <CommentDesc
-              post_Id={post._id}
+              post_Id={post?._id}
               author={post?.author?._id}
               comment={comment}
               getPostComment={getPostComment}

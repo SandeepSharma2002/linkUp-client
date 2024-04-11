@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../Store/Slices/UserSlice";
 import Post from "../../Services/Post/Post";
 import { FaCircleUser } from "react-icons/fa6";
+import { PostTags } from "../Post/PostTags";
 
 export const RightSideBar = () => {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -91,6 +92,7 @@ export const RightSideBar = () => {
           placeholder="Search for anything"
         />
       </div>
+      <PostTags/>
     </aside>
   );
 };

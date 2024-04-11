@@ -36,7 +36,8 @@ const CreatePost = ({ setShowEditor }) => {
     setDisable(true);
     let _id = null;
     // if (post) _id = post._id;
-    Post.createPost({ des: value, topic:tags, id: _id })
+    const topic=tags.toLowerCase();
+    Post.createPost({ des: value, topic, id: _id })
       .then((res) => {
         showToast(res.data.message, "success");
         setValue("");

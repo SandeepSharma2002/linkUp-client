@@ -2,11 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   title: null,
-  banner: null,
-  content: [],
-  tags: [],
   des: null,
-  author: {},
 };
 
 export const editorSlice = createSlice({
@@ -14,13 +10,9 @@ export const editorSlice = createSlice({
   initialState,
   reducers: {
     SetBlogData: (state, action) => {
-      let { title, banner, content, tags, des, author } = action.payload;
+      let { title, des } = action.payload;
       state.title = title;
-      state.banner = banner;
-      state.content = content;
-      state.tags = tags;
       state.des = des;
-      state.author = author;
     },
   },
 });

@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Post from "../../Services/Post/Post";
+import { useDispatch, useSelector } from "react-redux";
+import { setTag } from "../../Store/Slices/PostSlice";
 
-export const PostTags = ({ setActiveTab }) => {
+export const PostTags = () => {
   const [tags, setTags] = useState([]);
   const [index, setIndex] = useState(10);
+  const dispatch = useDispatch();
+  const { tag: activeTab } = useSelector((state) => state.PostState);
+
   useEffect(() => {
     Post.getPostTags()
       .then((res) => {
@@ -14,19 +19,46 @@ export const PostTags = ({ setActiveTab }) => {
 
   return (
     <div className="flex gap-1 flex-wrap w-full p-4 glass rounded-xl border border-white/10">
-      <h2 className="heading">Get Feeds by tags.</h2>
-      {tags.map(
-        (tag, i) =>
-          i <= index && (
-            <div className="relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200 hover:bg-white/10 hover:cursor-pointer">
+      <h2 className="heading"></h2>
+            <div
+              className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer  ${
+                activeTab === "latest" ? "bg-blue-600" : "bg-gray-800"
+              }`}
+            >
               <button
                 className="outline-none py-2 rounded-full text-sm"
-                onClick={() => setActiveTab(tag)}
+                onClick={() => dispatch(setTag("latest"))}
               >
-                {tag}
+                latest
               </button>
             </div>
-          )
+            <div
+              className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer ${
+                activeTab === "trending" ? "bg-blue-600" : " bg-gray-800 "
+              }`}
+            >
+              <button
+                className="outline-none py-2 rounded-full text-sm"
+                onClick={() => dispatch(setTag("trending"))}
+              >
+                trending
+              </button>
+            </div>
+      {tags.map((tag, i) =>
+          (
+          <div
+            className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer ${
+              activeTab === tag.title ? "bg-blue-600" : " bg-gray-800 "
+            }`}
+          >
+            <button
+              className="outline-none py-2 rounded-full text-sm"
+              onClick={() => dispatch(setTag(tag.title))}
+            >
+              {tag.title}
+            </button>
+          </div>
+        )
       )}
       {index < tags.length && (
         <button

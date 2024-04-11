@@ -48,7 +48,7 @@ export const SideBar = () => {
         <input type="checkbox" class="peer hidden" id="sidebar-open" />
         <label
           class=" peer-checked:rounded-full peer-checked:p-2 min-w-full peer-checked:left-56 transition-all duration-200 absolute top-8 -translate-y-1/2 z-50 mx-5 cursor-pointer lg:hidden"
-          for="sidebar-open"
+          htmlFor="sidebar-open"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

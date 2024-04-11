@@ -4,11 +4,13 @@ import storage from 'redux-persist/lib/storage';
 import UserSlice from "./Slices/UserSlice";
 import EditorSlice from "./Slices/EditorSlice";
 import RefreshSlice from "./Slices/RefreshSlice";
+import PostSlice from "./Slices/PostSlice";
 
-const rootReducer = combineReducers({ 
+const rootReducer = combineReducers({
   User: UserSlice,
-  EditorState:EditorSlice,
-  RefreshState:RefreshSlice
+  EditorState: EditorSlice,
+  RefreshState: RefreshSlice,
+  PostState: PostSlice
 })
 
 const persistConfig = {
