@@ -5,7 +5,6 @@ import { BsPlusCircleFill } from "react-icons/bs";
 import { IoChatbubblesSharp } from "react-icons/io5";
 import { FaCircleUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import CreatePost from "../Post/CreatePost";
 
 export const BottomNavigation = () => {
   const [showEditor, setShowEditor] = useState(false);
@@ -21,19 +20,11 @@ export const BottomNavigation = () => {
 
   return (
     <div
-      class={`fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 ${
+      class={`fixed bottom-0 w-full lg:bottom-2 md:w-[65%] lg:left-1/2 lg:-translate-x-1/2 z-50 lg:w-fit lg:rounded-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 ${
         !showEditor && "overflow-hidden"
       }
     `}
     >
-      <div
-        className={`absolute w-11/12 left-1/2 z-10 bottom-20 -translate-x-1/2 transition-all duration-200 md:translate-x-0  md:left-[10%] lg:left-1/2 lg:-translate-x-1/2 bg-white p-4 md:w-[55%] lg:w-[40%] rounded shadow-lg border border-gray-50 ${
-          showEditor ? "" : ""
-        }`}
-      >
-        <CreatePost setShowEditor={setShowEditor} />
-      </div>
-
       <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
         <Link
           onClick={() => {
@@ -41,7 +32,7 @@ export const BottomNavigation = () => {
             setShowEditor(false);
           }}
           to="/"
-          class="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
         >
           <TiHome
             size={20}
@@ -64,7 +55,7 @@ export const BottomNavigation = () => {
             setShowEditor(false);
           }}
           to="/notifications"
-          class="inline-flex flex-col items-center justify-center px-5 border-e border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-e border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
         >
           <GoBellFill
             size={20}
@@ -80,27 +71,28 @@ export const BottomNavigation = () => {
             Notifications
           </span>
         </Link>
-        <button
-          type="button"
-          onClick={() => {
-            setShowEditor(!showEditor)
-          }}
-          class="inline-flex flex-col items-center justify-center px-5 border-e text-blue-600 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600 group"
+        <Link
+        onClick={() => {
+          setSelectedTab("AddPost");
+          setShowEditor(false);
+        }}
+        to="/create-post"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-e text-blue-600 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600 group"
         >
           <BsPlusCircleFill
             size={36}
             className={`group-hover:ring-4 transition-all duration-200 group-hover:scale-110 rounded-full ring-blue-200 ${
-            showEditor ? "ring-4 scale-110" : ""
+              selectedTab ==="AddPost" ? "ring-4 scale-110" : ""
             } `}
           />
-        </button>
+        </Link>
         <Link
           onClick={() => {
-            // setSelectedTab("Chats");
+            setSelectedTab("Chats");
             setShowEditor(false);
           }}
-          // to="/chats"
-          class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+          to="/chats"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
         >
           <IoChatbubblesSharp
             size={20}
@@ -122,7 +114,7 @@ export const BottomNavigation = () => {
             setShowEditor(false);
           }}
           to="/profile"
-          class="inline-flex flex-col items-center justify-center px-5 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-gray-600"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-gray-600"
         >
           <FaCircleUser
             size={20}

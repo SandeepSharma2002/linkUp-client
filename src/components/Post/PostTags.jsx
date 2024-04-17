@@ -18,9 +18,10 @@ export const PostTags = () => {
   }, []);
 
   return (
-    <div className="flex gap-1 flex-wrap w-full p-4 glass rounded-xl border border-white/10">
-      <h2 className="heading"></h2>
-            <div
+    <div className="w-full glass rounded-xl border border-white/10">
+      <h2 className="heading">Trending Tags</h2>
+      <ul className="flex flex-wrap gap-2">
+            <li
               className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer  ${
                 activeTab === "latest" ? "bg-blue-600" : "bg-gray-800"
               }`}
@@ -31,8 +32,8 @@ export const PostTags = () => {
               >
                 latest
               </button>
-            </div>
-            <div
+            </li>
+            <li
               className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer ${
                 activeTab === "trending" ? "bg-blue-600" : " bg-gray-800 "
               }`}
@@ -43,10 +44,10 @@ export const PostTags = () => {
               >
                 trending
               </button>
-            </div>
+            </li>
       {tags.map((tag, i) =>
           (
-          <div
+          <li
             className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer ${
               activeTab === tag.title ? "bg-blue-600" : " bg-gray-800 "
             }`}
@@ -57,9 +58,10 @@ export const PostTags = () => {
             >
               {tag.title}
             </button>
-          </div>
+          </li>
         )
       )}
+      </ul>
       {index < tags.length && (
         <button
           onClick={() => setIndex((prev) => prev + 5)}

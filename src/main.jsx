@@ -10,7 +10,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./Store/Store.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <ToastContainer
@@ -22,5 +22,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </PersistGate>
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

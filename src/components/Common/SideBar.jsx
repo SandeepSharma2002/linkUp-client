@@ -11,6 +11,7 @@ import { LuDoorOpen } from "react-icons/lu";
 import { FaRegBell } from "react-icons/fa";
 import { GrContact } from "react-icons/gr";
 import { CreatePostModal } from "../Modals/CreatePostModal";
+import logo from '../../imgs/logo-transparent.png'
 
 export const SideBar = () => {
   const { username, image, isLoggedIn, email } = useSelector(
@@ -19,7 +20,10 @@ export const SideBar = () => {
   const [showModal, setShowModal] = useState(false);
   const [mode, setMode] = useState("");
   const [selectedTab, setSelectedTab] = useState("Home");
-
+  const dispatch = useDispatch();
+  const handleSignOut = () => {
+    dispatch(logOutUser());
+  };
   const SidebarTabs = [
     {
       label: "Dashboard",
@@ -69,11 +73,11 @@ export const SideBar = () => {
           aria-label="Sidebar Navigation"
           class="peer-checked:w-72 pb-16 left-0 z-10 flex h-screen w-0 border-r border-slate-200 flex-col overflow-hidden bg-slate-100 text-white dark:bg-gray-700 dark:border-gray-600 transition-all lg:h-screen lg:w-72"
         >
-          <Link to='/home' class="mt-5 py-4 pl-10 lg:mt-10 text-5xl text-black">
-            LinkUp
+          <Link to="/" class="my-4 mx-auto text-black">
+            <img src={logo} alt="" srcset="" className="h-28"/>
           </Link>
           <ul class="mt-8 space-y-3 md:mt-20">
-            {SidebarTabs.map((tab) => (
+            {/* {SidebarTabs.map((tab) => (
               <li
                 class="relative"
                 onClick={() => setSelectedTab(tab.label)}
@@ -91,21 +95,24 @@ export const SideBar = () => {
                   <span class="0.">{tab.label}</span>
                 </Link>
               </li>
-            ))}
+            ))} */}
           </ul>
 
           <div class="my-6 mt-auto ml-10 flex cursor-pointer">
-            <div>
               <img class="h-12 w-12 rounded-full" src={image} />
-            </div>
             <div class="ml-3">
               <p class="font-medium text-black dark:text-white">{username}</p>
               <p class="text-sm text-gray-600 dark:text-white">{email}</p>
             </div>
+            <button
+              class={` flex w-fit ml-auto pr-4 space-x-2 h-fit text-gray-600 dark:text-white focus:outline-none hover:text-gray-900`}
+            >
+              <LuDoorOpen size={36} />
+            </button>
           </div>
         </nav>
       </aside>
-     
+
       {showModal && <CreatePostModal setShowModal={setShowModal} mode={mode} />}
     </>
   );

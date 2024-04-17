@@ -8,9 +8,13 @@ import { logOutUser } from "../../Store/Slices/UserSlice";
 import Post from "../../Services/Post/Post";
 import { FaCircleUser } from "react-icons/fa6";
 import { PostTags } from "../Post/PostTags";
+import { UserCard } from "./UserCard";
+import User from "../../Services/User/User";
+import useDebounce from "../../hooks/UseDebounce";
 
 export const RightSideBar = () => {
   const [showNotifications, setShowNotifications] = useState(false);
+  const [users, setUsers] = useState([]);
   const [notificationsData, setNotificationsData] = useState([]);
   const [toggler2, setToggler2] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -18,6 +22,8 @@ export const RightSideBar = () => {
   const [noticount, setNotiCounts] = useState(0);
   const [update, setUpdate] = useState(false);
   const { image } = useSelector((state) => state.User);
+  const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
   const dispatch = useDispatch();
   const handleSignOut = () => {
     dispatch(logOutUser());
@@ -31,18 +37,39 @@ export const RightSideBar = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const getNotifications = () => {
-    setShowNotifications(!showNotifications);
+  const getUsers = () => {
     !showNotifications &&
-      Post.getNotifications({})
+      User.getUsers({})
         .then((res) => {
           console.log(res.data);
-          setNotificationsData(res.data.data);
+          setUsers(res.data.data);
         })
         .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      User.searchUsers({ query: debouncedSearchTerm, skip: 0, limit: 10 })
+        .then((res) => {
+          setUsers(res.data.data);
+          res.data.data.length === 0 && toast.error("No results founds.");
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error(err.response.data.message);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } else getUsers();
+  }, [debouncedSearchTerm]);
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   return (
-    <aside class="relative z-50  border-l border-slate-200 bg-slate-100 w-72 hidden md:flex flex-col dark:bg-gray-700 dark:border-gray-600">
+    <aside class="relative z-50 px-4 h-screen  border-l border-slate-200 bg-slate-100 w-[35%] lg:w-72 hidden md:flex flex-col dark:bg-gray-700 dark:border-gray-600">
       <ul class="flex justify-center items-center mt-4 space-x-6 sm:mt-0 h-16 border-b border-slate-200 dark:border-gray-600 dark:text-white">
         <li class="">
           <Link
@@ -58,6 +85,7 @@ export const RightSideBar = () => {
             class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 dark:border-gray-600 dark:text-black hover:text-black hover:shadow"
           >
             <FaRegBell size={20} />
+            {noticount > 0 && <span>{noticount}</span>}
           </Link>
         </li>
         <li class="">
@@ -69,6 +97,7 @@ export const RightSideBar = () => {
           </button>
         </li>
       </ul>
+      <PostTags />
       <div class="relative mx-auto flex justify-between rounded-md my-4">
         <svg
           class="absolute left-2 top-3 ml-2 block h-5 w-5 text-gray-400"
@@ -88,11 +117,17 @@ export const RightSideBar = () => {
         <input
           type="name"
           name="search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
           class="h-12 w-full rounded-md border border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-600 py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
-          placeholder="Search for anything"
+          placeholder="Search for user"
         />
       </div>
-      <PostTags/>
+      <div className="flex flex-col gap-4">
+      {users.map((user) => (
+        <UserCard user={user} />
+      ))}
+      </div>
     </aside>
   );
 };

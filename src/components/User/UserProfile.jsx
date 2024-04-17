@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaLink } from "react-icons/fa6";
 import User from "../../Services/User/User";
-import { Loader } from "../Common/Loader";
+import { Loader } from "../Loaders/Loader";
+import ExperienceInputForm from "../Common/ExperienceInputForm";
+import ExperienceDisplay from "../Common/ExperienceDisplay";
 
 export const UserProfile = () => {
   const [userData, setUserData] = useState();
@@ -33,8 +35,21 @@ export const UserProfile = () => {
       <Loader />
     </div>
   ) : (
-    <form id="login" onSubmit={handleSubmit} className="px-8 my-4 h-full overflow-y-auto hide-scroll">
-      <div className="">
+    <form
+      id="login"
+      onSubmit={handleSubmit}
+      className="h-full overflow-y-auto hide-scroll"
+    >
+      <div
+        class="h-[64px] flex justify-between items-center px-4  border-b w-full sticky z-50 bg-slate-100 dark:bg-gray-700 dark:border-gray-500
+      top-0 left-0 border-slate-200"
+      >
+        <p class="text-xl font-bold text-gray-700 dark:text-white">Profile</p>
+        <button class="text-sm font-medium text-blue-700 focus:outline-none focus:ring-1">
+          Profile Settings
+        </button>
+      </div>
+      <div className="px-6">
         <div className=" mx-auto ">
           <div className="xl:w-full border-b border-gray-300 dark:border-gray-700 py-5">
             <div className="flex items-center">
@@ -163,32 +178,6 @@ export const UserProfile = () => {
                     </p>
                   </div>
                 </div>
-                {/* <div className="h-fit flex">
-                  <button
-                    type="button"
-                    data-twe-ripple-init
-                    data-twe-ripple-color="light"
-                    class="inline-block  bg-[#7289da] px-3 py-3 rounded-l font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
-                  >
-                    <span class="[&>svg]:h-5 [&>svg]:w-5">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 640 512"
-                      >
-                        <path d="M524.5 69.8a1.5 1.5 0 0 0 -.8-.7A485.1 485.1 0 0 0 404.1 32a1.8 1.8 0 0 0 -1.9 .9 337.5 337.5 0 0 0 -14.9 30.6 447.8 447.8 0 0 0 -134.4 0 309.5 309.5 0 0 0 -15.1-30.6 1.9 1.9 0 0 0 -1.9-.9A483.7 483.7 0 0 0 116.1 69.1a1.7 1.7 0 0 0 -.8 .7C39.1 183.7 18.2 294.7 28.4 404.4a2 2 0 0 0 .8 1.4A487.7 487.7 0 0 0 176 479.9a1.9 1.9 0 0 0 2.1-.7A348.2 348.2 0 0 0 208.1 430.4a1.9 1.9 0 0 0 -1-2.6 321.2 321.2 0 0 1 -45.9-21.9 1.9 1.9 0 0 1 -.2-3.1c3.1-2.3 6.2-4.7 9.1-7.1a1.8 1.8 0 0 1 1.9-.3c96.2 43.9 200.4 43.9 295.5 0a1.8 1.8 0 0 1 1.9 .2c2.9 2.4 6 4.9 9.1 7.2a1.9 1.9 0 0 1 -.2 3.1 301.4 301.4 0 0 1 -45.9 21.8 1.9 1.9 0 0 0 -1 2.6 391.1 391.1 0 0 0 30 48.8 1.9 1.9 0 0 0 2.1 .7A486 486 0 0 0 610.7 405.7a1.9 1.9 0 0 0 .8-1.4C623.7 277.6 590.9 167.5 524.5 69.8zM222.5 337.6c-29 0-52.8-26.6-52.8-59.2S193.1 219.1 222.5 219.1c29.7 0 53.3 26.8 52.8 59.2C275.3 311 251.9 337.6 222.5 337.6zm195.4 0c-29 0-52.8-26.6-52.8-59.2S388.4 219.1 417.9 219.1c29.7 0 53.3 26.8 52.8 59.2C470.7 311 447.5 337.6 417.9 337.6z" />
-                      </svg>
-                    </span>
-                  </button>
-                  <input
-                    type="text"
-                    id="Email"
-                    name="email"
-                    required
-                    className="pl-3 py-3 w-full text-sm border-y border-r border-gray-300 focus:outline-none placeholder-gray-500 rounded-y rounded-r bg-transparent text-gray-500 dark:text-gray-400"
-                    placeholder="example@gmail.com"
-                  />
-                </div> */}
                 <div className="col-span-2 grid sm:grid-cols-2 gap-4">
                   <div className="flex flex-col w-full">
                     <label
@@ -644,6 +633,25 @@ export const UserProfile = () => {
             </div>
           </div>
         </div>
+        <div className=" mx-auto w-11/12 xl:w-full">
+          <div className="w-full py-4 sm:px-0 flex justify-end">
+            <button className="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 dark:bg-gray-700 rounded text-indigo-600 dark:text-indigo-600 px-6 py-2 text-xs mr-4">
+              Cancel
+            </button>
+            <button
+              className="bg-blue-600 focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-2 text-sm"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2">
+          <ExperienceInputForm />
+          <ExperienceDisplay />
+        </div>
+
         {/* <div className=" mx-auto mt-10 rounded bg-gray-100 dark:bg-gray-700 w-11/12 xl:w-full">
                 <div className="xl:w-full py-5 px-8">
                     <div className="flex items-center mx-auto">
@@ -740,19 +748,6 @@ export const UserProfile = () => {
                     </div>
                 </div>
             </div> */}
-        <div className=" mx-auto w-11/12 xl:w-full">
-          <div className="w-full py-4 sm:px-0 flex justify-end">
-            <button className="bg-gray-200 focus:outline-none transition duration-150 ease-in-out hover:bg-gray-300 dark:bg-gray-700 rounded text-indigo-600 dark:text-indigo-600 px-6 py-2 text-xs mr-4">
-              Cancel
-            </button>
-            <button
-              className="bg-blue-600 focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-2 text-sm"
-              type="submit"
-            >
-              Save
-            </button>
-          </div>
-        </div>
       </div>
     </form>
   );

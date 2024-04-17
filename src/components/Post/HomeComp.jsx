@@ -3,11 +3,11 @@ import { PostCard } from "../Common/PostCard";
 import Post from "../../Services/Post/Post";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import { Loader } from "../Common/Loader";
+import { Loader } from "../Loaders/Loader";
 import CreatePost from "./CreatePost";
 import { BottomNavigation } from "../Common/BottomNavigation";
 import useDebounce from "../../hooks/UseDebounce";
-
+import { PostCardSkeleton } from "../Loaders/PostCardSkeleton";
 
 export const HomeComp = () => {
   const [loading, setLoading] = useState(false);
@@ -77,8 +77,7 @@ export const HomeComp = () => {
         .finally(() => {
           setLoading(false);
         });
-    }
-    else getPosts()
+    } else getPosts();
   }, [debouncedSearchTerm]);
 
   useEffect(() => {
@@ -114,8 +113,11 @@ export const HomeComp = () => {
           />
         </label>
       </div>
+
       {loading ? (
-        <Loader />
+         <ul className="mt-16 md:mt-0 px-4">
+           <PostCardSkeleton />
+         </ul>
       ) : (
         <>
           <ul className="mt-16 md:mt-0 px-4">

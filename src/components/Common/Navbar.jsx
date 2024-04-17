@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../imgs/logo-transparent.png";
 import { Link } from "react-router-dom";
 import { FaRegBell, FaSearch } from "react-icons/fa";
-import { TfiWrite } from "react-icons/tfi";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../Store/Slices/UserSlice";
-import { PiSignOut } from "react-icons/pi";
-import { CgProfile } from "react-icons/cg";
-import { IoSettingsOutline } from "react-icons/io5";
-import { IoNotifications } from "react-icons/io5";
-import { CreatePostModal } from "../Modals/CreatePostModal";
-import { NotificationComponent } from "./NotificationComponent";
 import Post from "../../Services/Post/Post";
 import { LuDoorOpen } from "react-icons/lu";
 import { Notification } from "./Notification";

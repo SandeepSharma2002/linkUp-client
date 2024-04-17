@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { CreatePostComp } from "../../components/Post/CreatePostComp";
+import { ChatComp } from "../../components/Chat/Chat";
 
-export const CreatePostPage = () => {
+export const ChatPage = () => {
   const navigate = useNavigate();
   const { isLoggedIn, access_token } = useSelector((state) => state.User);
 
@@ -13,5 +13,5 @@ export const CreatePostPage = () => {
     }
   }, [navigate, isLoggedIn, access_token]);
 
-  return <CreatePostComp />;
+  return <ChatComp />;
 };
