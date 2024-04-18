@@ -14,11 +14,10 @@ export const SocketContextProvider = ({ children }) => {
 
   const { isLoggedIn, id } = useSelector((state) => state.User);
 
-  const host_addr = "https://linkup-server-a3ar.onrender.com";
 
   useEffect(() => {
     if (isLoggedIn) {
-      const socket = io(host_addr, {
+      const socket = io("https://linkup-server-a3ar.onrender.com", {
         query: {
           userId: id,
         },
