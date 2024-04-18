@@ -24,6 +24,8 @@ export const MessageCard = ({ message, username }) => {
     }
   };
 
+  console.log(message);
+
   return (
     <div key={message._id} class={`flex items-start gap-2.5 ${message.sender.username == username ? "flex-row-reverse":""}`}>
       <img
@@ -48,7 +50,7 @@ export const MessageCard = ({ message, username }) => {
             {formatDateTime(message.createdAt)}
           </span>
         </div>
-        <p class={`text-sm font-normal py-2.5   ${ message.sender.username === username
+        <p class={`text-sm font-normal py-2.5 break-all  ${ message.sender.username === username
             ? "text-gray-800 dark:text-white":" text-white"} `}>
           {message.content}
         </p>

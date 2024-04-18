@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../Store/Slices/UserSlice";
 import { Link } from "react-router-dom";
@@ -11,12 +11,15 @@ import { LuDoorOpen } from "react-icons/lu";
 import { FaRegBell } from "react-icons/fa";
 import { GrContact } from "react-icons/gr";
 import { CreatePostModal } from "../Modals/CreatePostModal";
-import logo from '../../imgs/logo-transparent.png'
+import logo from "../../imgs/logo-transparent.png";
+import User from "../../Services/User/User";
+import { FriendUserCard } from "./FriendUserCard";
 
 export const SideBar = () => {
   const { username, image, isLoggedIn, email } = useSelector(
     (state) => state.User
   );
+  const [users, setUsers] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [mode, setMode] = useState("");
   const [selectedTab, setSelectedTab] = useState("Home");
@@ -46,6 +49,18 @@ export const SideBar = () => {
       to: "/notifications",
     },
   ];
+
+  const getUsers = () => {
+    User.getUsers({})
+      .then((res) => {
+        setUsers(res.data.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
   return (
     <>
       <aside class="fixed z-40 lg:relative dark:bg-gray-700 dark:border-gray-600">
@@ -74,8 +89,14 @@ export const SideBar = () => {
           class="peer-checked:w-72 pb-16 left-0 z-10 flex h-screen w-0 border-r border-slate-200 flex-col overflow-hidden bg-slate-100 text-white dark:bg-gray-700 dark:border-gray-600 transition-all lg:h-screen lg:w-72"
         >
           <Link to="/" class="my-4 mx-auto text-black">
-            <img src={logo} alt="" srcset="" className="h-28"/>
+            <img src={logo} alt="" srcset="" className="h-28" />
           </Link>
+          <h3 className="mt-10 text-3xl text-sky-600 font-medium pl-4">Friends List</h3>
+          <div className="flex flex-col gap-4 mt-2 px-4">
+            {users.map((user) => (
+              <FriendUserCard user={user} key={user.username} />
+            ))}
+          </div>
           <ul class="mt-8 space-y-3 md:mt-20">
             {/* {SidebarTabs.map((tab) => (
               <li
@@ -99,7 +120,7 @@ export const SideBar = () => {
           </ul>
 
           <div class="my-6 mt-auto ml-10 flex cursor-pointer">
-              <img class="h-12 w-12 rounded-full" src={image} />
+            <img class="h-12 w-12 rounded-full" src={image} />
             <div class="ml-3">
               <p class="font-medium text-black dark:text-white">{username}</p>
               <p class="text-sm text-gray-600 dark:text-white">{email}</p>
@@ -107,7 +128,7 @@ export const SideBar = () => {
             <button
               class={` flex w-fit ml-auto pr-4 space-x-2 h-fit text-gray-600 dark:text-white focus:outline-none hover:text-gray-900`}
             >
-              <LuDoorOpen size={36} />
+              <LuDoorOpen onClick={handleSignOut} size={36} />
             </button>
           </div>
         </nav>

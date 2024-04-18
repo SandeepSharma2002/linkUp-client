@@ -1,17 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Chat from "../../Services/Chats/Chat";
 import Message from "../../Services/Messages/Message";
 import { MessageCard } from "../Common/Message";
 import { useSelector } from "react-redux";
 import { WriteMessage } from "../Common/WriteMessage";
+import { useSocketContext } from "../../Context/Socket/SocketConnection";
 
 export const ChatComp = () => {
   const [chatId, setChatId] = useState();
   const [messages, setMessages] = useState([]);
   const { username } = useSelector((state) => state.User);
+  const { id } = useSelector((state) => state.ChatState);
+  const messagesEndRef = useRef(null);
+  const { socket } = useSocketContext();
+
+  useEffect(() => {
+    socket?.on("newMessage", (newMessage) => {
+      newMessage.shouldShake = true;
+      setMessages([...messages, newMessage]);
+    });
+    return () => socket?.off("newMessage");
+  }, [socket, setMessages, messages]);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const getChats = () => {
-    Chat.accessChat({ userId: "661f29c4cb11f23ad1cbcab3" }).then((res) => {
+    Chat.accessChat({ userId: id }).then((res) => {
       setChatId(res.data.data._id);
     });
   };
@@ -22,16 +42,13 @@ export const ChatComp = () => {
     });
   };
 
-  console.log(chatId);
-
   useEffect(() => {
     chatId && getMessages();
-  }, [chatId]);
+  }, [chatId, id]);
 
   useEffect(() => {
     getChats();
-  }, []);
-
+  }, [id]);
 
   return (
     <div class="mx-auto h-full overflow-y-auto dark:bg-gray-900 hide-scroll">
@@ -49,8 +66,9 @@ export const ChatComp = () => {
           <MessageCard message={message} username={username} />
         ))}
       </div>
+      <div ref={messagesEndRef} />
       <div className="flex justify-center">
-        <WriteMessage chatId={chatId} />
+        <WriteMessage chatId={chatId} receiver={id} />
       </div>
     </div>
   );

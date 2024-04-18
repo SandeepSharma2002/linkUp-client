@@ -8,19 +8,19 @@ import { ToastContainer } from "react-toastify";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./Store/Store.js";
+import { SocketContextProvider } from "./Context/Socket/SocketConnection.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <ToastContainer
-          position="top-center"
-          autoClose={2000}
-        />
-        <PersistGate loading={null} persistor={persistor}>
+  <Provider store={store}>
+    <BrowserRouter>
+      <ToastContainer position="top-center" autoClose={2000} />
+      <PersistGate loading={null} persistor={persistor}>
+        <SocketContextProvider>
           <App />
-        </PersistGate>
-      </BrowserRouter>
-    </Provider>
+        </SocketContextProvider>
+      </PersistGate>
+    </BrowserRouter>
+  </Provider>
   // </React.StrictMode>
 );

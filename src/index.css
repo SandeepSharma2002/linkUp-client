@@ -1,26 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Gelasio&family=Inter:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gelasio&family=Inter:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 .custom-text-shadow {
-    text-shadow: 0px 0px 20px #208c8c, 0px 0px 20px #208c8c;
+  text-shadow: 0px 0px 20px #208c8c, 0px 0px 20px #208c8c;
+}
+
+@layer components {
+  .hide-scroll {
+    @apply [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none];
   }
- 
 
-@layer components{
-        
-        .hide-scroll{
-         @apply [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
-        }
+  .glass {
+    @apply bg-gradient-to-b from-white/5 to-white/5 text-[#fff] backdrop-blur-lg border-[1px] border-solid border-white border-opacity-10 rounded-2xl;
+  }
 
-        .glass{
-         @apply bg-gradient-to-b from-white/5 to-white/5 text-[#fff] backdrop-blur-lg border-[1px] border-solid border-white border-opacity-10 rounded-2xl
-        }
-
-        .heading{
-         @apply text-2xl lg:text-4xl capitalize font-semibold
-        }
+  .heading {
+    @apply text-2xl lg:text-4xl capitalize font-semibold;
+  }
 }

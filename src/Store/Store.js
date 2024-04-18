@@ -5,12 +5,14 @@ import UserSlice from "./Slices/UserSlice";
 import EditorSlice from "./Slices/EditorSlice";
 import RefreshSlice from "./Slices/RefreshSlice";
 import PostSlice from "./Slices/PostSlice";
+import ChatSlice from "./Slices/ChatSlice";
 
 const rootReducer = combineReducers({
   User: UserSlice,
   EditorState: EditorSlice,
   RefreshState: RefreshSlice,
-  PostState: PostSlice
+  PostState: PostSlice,
+  ChatState: ChatSlice,
 })
 
 const persistConfig = {

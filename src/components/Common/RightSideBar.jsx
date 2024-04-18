@@ -38,10 +38,8 @@ export const RightSideBar = () => {
   }, []);
 
   const getUsers = () => {
-    !showNotifications &&
       User.getUsers({})
         .then((res) => {
-          console.log(res.data);
           setUsers(res.data.data);
         })
         .catch((err) => console.log(err));
@@ -125,7 +123,7 @@ export const RightSideBar = () => {
       </div>
       <div className="flex flex-col gap-4">
       {users.map((user) => (
-        <UserCard user={user} />
+        <UserCard user={user} key={user.username}/>
       ))}
       </div>
     </aside>

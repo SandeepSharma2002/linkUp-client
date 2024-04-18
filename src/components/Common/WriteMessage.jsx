@@ -8,13 +8,17 @@ import draftToHtml from "draftjs-to-html";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import Message from "../../Services/Messages/Message";
 
-export const WriteMessage = ({ chatId }) => {
+export const WriteMessage = ({ chatId , receiver}) => {
   const [text, setText] = useState("");
 
   const sendMessage = () => {
+
+    const content = text.replace(/<\/br>/g, '\n');
+
     Message.sendmessage({
       chatId,
-      content: text,
+      userId:receiver,
+      content
     })
       .then((res) => {
         setText("");
@@ -28,6 +32,8 @@ export const WriteMessage = ({ chatId }) => {
         <InputEmoji
           value={text}
           onChange={setText}
+          cleanOnEnter
+          onEnter={sendMessage}
           shouldReturn={true}
           placeholder="Type a message"
         />

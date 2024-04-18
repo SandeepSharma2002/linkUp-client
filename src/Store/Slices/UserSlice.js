@@ -2,10 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   username: null,
+  id: null,
   access_token: null,
   googleAuth: false,
   image: null,
-  email:null,
+  email: null,
   isLoggedIn: false,
   role: null,
 };
@@ -15,12 +16,13 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     logInUser: (state, action) => {
-      const { username, access_token, googleAuth, image, role,email } =
+      const { username, access_token, id, googleAuth, image, role, email } =
         action.payload;
       state.username = username;
+      state.id = id,
       state.access_token = access_token;
       state.googleAuth = googleAuth;
-      state.email=email;
+      state.email = email;
       state.image = image;
       state.isLoggedIn = true;
       state.role = role;
@@ -28,6 +30,7 @@ export const userSlice = createSlice({
 
     logOutUser: (state) => {
       state.username = null;
+      state.id = null;
       state.access_token = null;
       state.googleAuth = false;
       state.image = null;

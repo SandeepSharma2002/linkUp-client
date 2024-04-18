@@ -1,6 +1,5 @@
 import axios from "../index";
-// const host_addr = "http://localhost:3000";
-const host_addr = "https://linkup-server-a3ar.onrender.com";
+const host_addr = import.meta.env.VITE_SERVER_DOMAIN;
 
 class Message {
 
