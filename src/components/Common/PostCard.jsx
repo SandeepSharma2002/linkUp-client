@@ -92,7 +92,7 @@ export const PostCard = ({ post, type}) => {
   };
 
   return (
-    <li class="py-6 text-base border-b z-0 border-slate-200 last:border-0">
+    <li class="py-6 text-base border-b z-0 border-gray-dark last:border-0">
       <article class="flex justify-between items-center mb-2">
         <div class="flex items-center">
           <img
@@ -104,7 +104,7 @@ export const PostCard = ({ post, type}) => {
             <p class="inline-flex items-center mr-3 text-black dark:text-white font-semibold">
               {post?.author?.username}
             </p>
-            <p class=" text-gray-600 dark:text-gray-400">
+            <p class=" text-text-l-500 dark:text-gray-400">
               <time title="February 8th, 2022">
                 {publishedDate}
               </time>
@@ -115,7 +115,7 @@ export const PostCard = ({ post, type}) => {
           <button
             onBlur={() => setTimeout(() => setShowDropDown(false), 300)}
             onClick={() => setShowDropDown(!showDropDown)}
-            class="inline-flex items-center p-2 text-sm rotate-90 font-medium text-center text-gray-500 dark:text-gray-400 rounded-lg hover:bg-gray-100 focus:outline-none  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            class="inline-flex items-center p-2 text-sm rotate-90 font-medium text-center text-gray-500 dark:text-gray-400 rounded-lg hover:bg-gray-100 focus:outline-none  dark:hover:bg-gray-700 dark:focus:ring-text-l-500"
             type="button"
           >
             <svg
@@ -134,7 +134,7 @@ export const PostCard = ({ post, type}) => {
             <div
               onBlur={() => setShowDropDown(false)}
               id="dropdownComment1"
-              class="absolute top-4 right-8 z-10 w-20 bg-white rounded divide-y divide-gray-200 shadow-xl dark:bg-gray-700 dark:divide-gray-600"
+              class="absolute top-4 right-8 z-10 w-20 bg-white rounded divide-y divide-gray-200 shadow-xl dark:bg-gray-700 dark:divide-text-l-500"
             >
               <ul
                 class="py-1 text-sm text-gray-800 dark:text-gray-200"
@@ -142,12 +142,12 @@ export const PostCard = ({ post, type}) => {
               >
                 {username === post?.author?.username && (
                   <>
-                    <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-text-l-500 dark:hover:text-white">
                       <button onClick={() => handleMenuOperation("edit", post)}>
                         Edit
                       </button>
                     </li>
-                    <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-text-l-500 dark:hover:text-white">
                       <button
                         onClick={() => handleMenuOperation("delete", post)}
                       >
@@ -156,7 +156,7 @@ export const PostCard = ({ post, type}) => {
                     </li>
                   </>
                 )}
-                <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-text-l-500 dark:hover:text-white">
                   <button onClick={() => handleMenuOperation("report", post)}>
                     Report
                   </button>
@@ -168,18 +168,18 @@ export const PostCard = ({ post, type}) => {
       </article>
       <div className="my-2 dark:text-white" dangerouslySetInnerHTML={{ __html: post?.des}} />
 
-      <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2 py-1 rounded dark:bg-blue-900 dark:text-blue-300">
+      <span class=" bg-primary-500/10 text-primary-700 text-sm font-medium px-2 py-1 rounded dark:bg-blue-900 dark:text-blue-300">
         {post?.title}
       </span>
       <div class="flex items-center mt-4 space-x-4">
         <button
           type="button"
           onClick={() => handleLike(post?._id)}
-          class="flex items-center text-sm text-gray-600 hover:underline dark:text-gray-400 font-medium"
+          class="flex items-center text-sm text-text-l-500 hover:underline dark:text-gray-400 font-medium"
         >
           <FaHeart
             className={`${
-              isLikedByUser ? "text-red-600" : "text-gray-600"
+              isLikedByUser ? "text-danger" : "text-text-l-500"
             } mr-1`}
             size={12}
           />
@@ -190,7 +190,7 @@ export const PostCard = ({ post, type}) => {
           onClick={() => {
             handleComments(post?._id);
           }}
-          class="flex items-center text-sm text-gray-600 hover:underline dark:text-gray-400 font-medium"
+          class="flex items-center text-sm text-text-l-500 hover:underline dark:text-gray-400 font-medium"
         >
           <TfiCommentAlt className="mr-1" size={12} />
           {totalComment} Comment

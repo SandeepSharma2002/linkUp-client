@@ -26,16 +26,16 @@ export const FriendUserCard = ({ user }) => {
           alt={user.username}
           className="relative z-0 inline-block h-10 w-10 !rounded-xl  object-cover object-center"
         />
-        {isOnline && <span class="top-0 start-7 absolute w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-gray-800 rounded-full"></span>}
+        {isOnline && <span class="top-0 start-7 absolute w-3.5 h-3.5 bg-success border-2 border-white dark:border-gray-800 rounded-full"></span>}
       </div>
 
       <div class="max-w-[80%] truncate">
-        <p class="font-medium text-sky-600 dark:text-white">{user.username}</p>
-        <p class="text-sm text-gray-600 dark:text-white ">{user.email}</p>
+        <p class="font-medium text-primary-600 dark:text-white">{user.username}</p>
+        <p class="text-sm text-text-l-500 dark:text-white ">{user.email}</p>
       </div>
       <button
         type="button"
-        className="text-sky-600 ml-auto"
+        className="text-primary-600 ml-auto"
         onClick={() => handleClick(user)}
       >
         <FaMessage size={20} />

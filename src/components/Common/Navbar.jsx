@@ -42,12 +42,12 @@ export const Navbar = () => {
 
   return (
 
-    <header class="fixed w-full h-16 z-40 left-0 top-0 border-b border-slate-200 flex justify-end items-center bg-slate-100 px-4 py-4 sm:flex-row">
+    <header class="fixed w-full h-16 z-40 left-0 top-0 border-b border-gray-dark flex justify-end items-center bg-gray-light px-4 py-4 sm:flex-row">
         <ul class="mt-4 space-x-6 sm:mx-5 sm:mt-0 flex">
           <li class="">
             <Link
               to="/profile"
-              class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 hover:text-black hover:shadow"
+              class="flex h-8 w-8 items-center justify-center rounded-xl border text-text-l-500 hover:text-black hover:shadow"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ export const Navbar = () => {
             </Link>
           </li>
           <li class="relative">
-            <button class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 hover:text-black hover:shadow">
+            <button class="flex h-8 w-8 items-center justify-center rounded-xl border text-text-l-500 hover:text-black hover:shadow">
               <FaRegBell
                 size={20}
                 onClick={() => getNotifications()}
@@ -79,7 +79,7 @@ export const Navbar = () => {
           <li class="">
             <button
               onClick={handleSignOut}
-              class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 hover:text-black hover:shadow"
+              class="flex h-8 w-8 items-center justify-center rounded-xl border text-text-l-500 hover:text-black hover:shadow"
             >
               <LuDoorOpen size={20} />
             </button>

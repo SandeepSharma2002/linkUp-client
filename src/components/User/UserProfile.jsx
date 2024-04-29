@@ -41,8 +41,8 @@ export const UserProfile = () => {
       className="h-full overflow-y-auto hide-scroll"
     >
       <div
-        class="h-[64px] flex justify-between items-center px-4  border-b w-full sticky z-50 bg-slate-100 dark:bg-gray-700 dark:border-gray-500
-      top-0 left-0 border-slate-200"
+        class="pl-16 h-[64px] flex justify-between items-center px-4  border-b w-full sticky z-40 bg-gray-light dark:bg-gray-700 dark:border-gray-500
+      top-0 left-0 border-gray-dark"
       >
         <p class="text-xl font-bold text-gray-700 dark:text-white">Profile</p>
         <button class="text-sm font-medium text-blue-700 focus:outline-none focus:ring-1">
@@ -56,7 +56,7 @@ export const UserProfile = () => {
               <p className="text-lg text-gray-800 dark:text-gray-100 font-bold">
                 Profile
               </p>
-              <div className="ml-2 cursor-pointer text-gray-600 dark:text-gray-400">
+              <div className="ml-2 cursor-pointer text-text-l-500 dark:text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -394,7 +394,7 @@ export const UserProfile = () => {
               <p className="text-lg text-gray-800 dark:text-gray-100 font-bold">
                 Personal Information
               </p>
-              <div className="ml-2 cursor-pointer text-gray-600 dark:text-gray-400">
+              <div className="ml-2 cursor-pointer text-text-l-500 dark:text-gray-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -597,7 +597,7 @@ export const UserProfile = () => {
                   >
                     ZIP/Postal Code
                   </label>
-                  <div className="ml-2 cursor-pointer text-gray-600 dark:text-gray-400">
+                  <div className="ml-2 cursor-pointer text-text-l-500 dark:text-gray-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"

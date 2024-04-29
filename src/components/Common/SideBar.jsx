@@ -63,7 +63,7 @@ export const SideBar = () => {
   }, []);
   return (
     <>
-      <aside class="fixed z-40 lg:relative dark:bg-gray-700 dark:border-gray-600">
+      <aside class="fixed z-50 lg:relative dark:bg-gray-700 dark:border-text-l-500">
         <input type="checkbox" class="peer hidden" id="sidebar-open" />
         <label
           class=" peer-checked:rounded-full peer-checked:p-2 min-w-full peer-checked:left-56 transition-all duration-200 absolute top-8 -translate-y-1/2 z-50 mx-5 cursor-pointer lg:hidden"
@@ -86,12 +86,12 @@ export const SideBar = () => {
         </label>
         <nav
           aria-label="Sidebar Navigation"
-          class="peer-checked:w-72 pb-16 left-0 z-10 flex h-screen w-0 border-r border-slate-200 flex-col overflow-hidden bg-slate-100 text-white dark:bg-gray-700 dark:border-gray-600 transition-all lg:h-screen lg:w-72"
+          class="peer-checked:w-72 pb-16 left-0 z-10 flex h-screen w-0 border-r border-gray-dark flex-col overflow-hidden bg-gray-light text-white dark:bg-gray-700 dark:border-text-l-500 transition-all lg:h-screen lg:w-72"
         >
           <Link to="/" class="my-4 mx-auto text-black">
             <img src={logo} alt="" srcset="" className="h-28" />
           </Link>
-          <h3 className="mt-10 text-3xl text-sky-600 font-medium pl-4">Friends List</h3>
+          <h3 className="mt-10 text-3xl text-primary-600 font-medium pl-4">Friends List</h3>
           <div className="flex flex-col gap-4 mt-2 px-4">
             {users.map((user) => (
               <FriendUserCard user={user} key={user.username} />
@@ -106,7 +106,7 @@ export const SideBar = () => {
               >
                 <Link
                   // to={tab.to}
-                  class={` flex w-full space-x-2  px-10 py-4 text-gray-600 dark:text-white focus:outline-none ${
+                  class={` flex w-full space-x-2  px-10 py-4 text-text-l-500 dark:text-white focus:outline-none ${
                     selectedTab === tab.label
                       ? " bg-blue-600 rounded-none text-white hover:bg-blue-700"
                       : "hover:bg-blue-400 hover:text-white"
@@ -123,10 +123,10 @@ export const SideBar = () => {
             <img class="h-12 w-12 rounded-full" src={image} />
             <div class="ml-3">
               <p class="font-medium text-black dark:text-white">{username}</p>
-              <p class="text-sm text-gray-600 dark:text-white">{email}</p>
+              <p class="text-sm text-text-l-500 dark:text-white">{email}</p>
             </div>
             <button
-              class={` flex w-fit ml-auto pr-4 space-x-2 h-fit text-gray-600 dark:text-white focus:outline-none hover:text-gray-900`}
+              class={` flex w-fit ml-auto pr-4 space-x-2 h-fit text-text-l-500 dark:text-white focus:outline-none hover:text-gray-900`}
             >
               <LuDoorOpen onClick={handleSignOut} size={36} />
             </button>

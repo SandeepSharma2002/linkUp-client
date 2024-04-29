@@ -12,8 +12,8 @@ export const UserCard = ({ user }) => {
         className="relative z-0 inline-block h-10 w-10 !rounded-xl  object-cover object-center"
       />
       <div class="">
-        <p class="font-medium text-sky-600 dark:text-white">{user.username}</p>
-        <p class="text-sm text-gray-600 dark:text-white">{user.email}</p>
+        <p class="font-medium text-primary-600 dark:text-white">{user.username}</p>
+        <p class="text-sm text-text-l-500 dark:text-white">{user.email}</p>
       </div>
     </div>
   );

@@ -65,7 +65,7 @@ export const CommentDesc = ({
                   />
                   {comment?.commented_by?.username}
                 </p>
-                <p class="text-sm text-gray-600 dark:text-gray-400">
+                <p class="text-sm text-text-l-500 dark:text-gray-400">
                   <time
                     title="February 8th, 2022"
                   >
@@ -77,7 +77,7 @@ export const CommentDesc = ({
                 <button
                   onBlur={() => setTimeout(() => setShowDropDown(false), 300)}
                   onClick={() => setShowDropDown(!showDropDown)}
-                  class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                  class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-text-l-500"
                   type="button"
                 >
                   <svg
@@ -96,7 +96,7 @@ export const CommentDesc = ({
                   <div
                     onBlur={() => setShowDropDown(false)}
                     id="dropdownComment1"
-                    class="absolute top-4 right-8 z-10 w-20 bg-white rounded divide-y divide-gray-200 shadow-xl dark:bg-gray-700 dark:divide-gray-600"
+                    class="absolute top-4 right-8 z-10 w-20 bg-white rounded divide-y divide-gray-200 shadow-xl dark:bg-gray-700 dark:divide-text-l-500"
                   >
                     <ul
                       class="py-1 text-sm text-gray-800 dark:text-gray-200"
@@ -104,7 +104,7 @@ export const CommentDesc = ({
                     >
                       {username === comment?.commented_by?.username && (
                         <>
-                          <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                          <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-text-l-500 dark:hover:text-white">
                             <button
                               onClick={() => handleDelete(comment)}
                             >
@@ -113,7 +113,7 @@ export const CommentDesc = ({
                           </li>
                         </>
                       )}
-                      <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <li class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-text-l-500 dark:hover:text-white">
                         <button
                           // onClick={() => handleMenuOperation(comment)}
                         >

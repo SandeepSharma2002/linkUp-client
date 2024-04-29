@@ -18,12 +18,12 @@ export const PostTags = () => {
   }, []);
 
   return (
-    <div className="w-full glass rounded-xl border border-white/10">
-      <h2 className="heading">Trending Tags</h2>
+    <div className="w-full rounded-xl">
+      <h2 className="text-3xl my-2 font-semibold text-primary-600">Trending Tags</h2>
       <ul className="flex flex-wrap gap-2">
             <li
-              className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer  ${
-                activeTab === "latest" ? "bg-blue-600" : "bg-gray-800"
+              className={`relative flex bg-body-d border justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer  ${
+                activeTab === "latest" ? "bg-primary-500 text-white border-primary-600" : " bg-gray-dark border-gray-dark"
               }`}
             >
               <button
@@ -34,8 +34,8 @@ export const PostTags = () => {
               </button>
             </li>
             <li
-              className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer ${
-                activeTab === "trending" ? "bg-blue-600" : " bg-gray-800 "
+              className={`relative flex bg-body-d border justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer ${
+                activeTab === "trending" ? "bg-primary-500 text-white border-primary-600" : " bg-gray-dark border-gray-dark"
               }`}
             >
               <button
@@ -48,8 +48,8 @@ export const PostTags = () => {
       {tags.map((tag, i) =>
           (
           <li
-            className={`relative flex bg-body-d border border-white/10 justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer ${
-              activeTab === tag.title ? "bg-blue-600" : " bg-gray-800 "
+            className={`relative flex bg-body-d border  justify-center items-center px-4 rounded-full gap-1 hover:scale-105 transition-all duration-200  hover:cursor-pointer ${
+              activeTab === tag.title ? "bg-primary-500 text-white border-primary-600" : " bg-gray-dark border-gray-dark"
             }`}
           >
             <button

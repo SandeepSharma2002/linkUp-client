@@ -38,7 +38,7 @@ export const WriteMessage = ({ chatId , receiver}) => {
           placeholder="Type a message"
         />
       </div>
-      <button className="h-fit w-fit p-2 bg-sky-600 text-white rounded-full">
+      <button className="h-fit w-fit p-2 bg-primary-600 text-white rounded-full">
         <FaPaperPlane size={20} onClick={() => sendMessage()} />
       </button>
     </div>

@@ -151,8 +151,8 @@ const handleTagChange = (e) => {
   return (
     <div class="mx-auto h-full overflow-y-auto dark:bg-gray-900 hide-scroll">
       <div
-        class="h-[64px] flex justify-between items-center px-4 border-b w-full sticky z-50 bg-slate-100 dark:bg-gray-700 dark:border-gray-500
-    top-0 left-0 border-slate-200"
+        class="h-[64px] flex justify-between items-center px-4 border-b w-full sticky z-50 bg-gray-light dark:bg-gray-700 dark:border-gray-500
+    top-0 left-0 border-gray-dark"
       >
         <p class="text-xl font-bold text-gray-700 dark:text-white">
           Create Post
@@ -207,7 +207,7 @@ const handleTagChange = (e) => {
         {/* Hastag to get suggestions */}
 
         <div className="flex gap-4 my-2">
-          <div className="flex flex-1 items-center gap-4 mt-2 px-2 text-gray-600">
+          <div className="flex flex-1 items-center gap-4 mt-2 px-2 text-text-l-500">
             <label className="text-lg">Topic:</label>
             <input
               type="text"
@@ -227,7 +227,7 @@ const handleTagChange = (e) => {
         </div>
       </div>
 
-      <div class="py-6 px-6 text-base border-b z-0 border-slate-200 last:border-0">
+      <div class="py-6 px-6 text-base border-b z-0 border-gray-dark last:border-0">
       <h3 className="text-blue-600 mb-6 underline underline-offset-4 text-2xl lg:text-4xl">Live Preview:</h3>
         <article class="flex justify-between items-center mb-2">
           <div class="flex items-center">
@@ -236,7 +236,7 @@ const handleTagChange = (e) => {
               <p class="inline-flex items-center mr-3 text-black dark:text-white font-semibold">
                 {username}
               </p>
-              <p class=" text-gray-600 dark:text-gray-400">
+              <p class=" text-text-l-500 dark:text-gray-400">
                 <time title="February 8th, 2022">
                   {months[new Date().getMonth()] + " " + new Date().getDate()}
                 </time>
@@ -245,7 +245,7 @@ const handleTagChange = (e) => {
           </div>
           <div className="relative">
             <button
-              class="inline-flex items-center p-2 text-sm rotate-90 font-medium text-center text-gray-500 dark:text-gray-400 rounded-lg hover:bg-gray-100 focus:outline-none  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              class="inline-flex items-center p-2 text-sm rotate-90 font-medium text-center text-gray-500 dark:text-gray-400 rounded-lg hover:bg-gray-100 focus:outline-none  dark:hover:bg-gray-700 dark:focus:ring-text-l-500"
               type="button"
             >
               <svg
@@ -263,7 +263,7 @@ const handleTagChange = (e) => {
         </article>
         <div
           className="my-2 dark:text-white"
-          dangerouslySetInnerHTML={{ __html: content || "<p class=' text-gray-600'>Content will appear here.</p>"  }}
+          dangerouslySetInnerHTML={{ __html: content || "<p class=' text-text-l-500'>Content will appear here.</p>"  }}
         />
         
         <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2 py-1 rounded dark:bg-blue-900 dark:text-blue-300">
@@ -272,13 +272,13 @@ const handleTagChange = (e) => {
         <div class="flex items-center mt-4 space-x-4">
           <button
             type="button"
-            class="flex items-center text-sm text-gray-600 hover:underline dark:text-gray-400 font-medium"
+            class="flex items-center text-sm text-text-l-500 hover:underline dark:text-gray-400 font-medium"
           >
             <FaHeart className="text-red-600 mr-1" size={12} />1 Like
           </button>
           <button
             type="button"
-            class="flex items-center text-sm text-gray-600 hover:underline dark:text-gray-400 font-medium"
+            class="flex items-center text-sm text-text-l-500 hover:underline dark:text-gray-400 font-medium"
           >
             <TfiCommentAlt className="mr-1" size={12} />0 Comment
           </button>

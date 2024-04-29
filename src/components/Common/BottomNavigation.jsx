@@ -20,7 +20,7 @@ export const BottomNavigation = () => {
 
   return (
     <div
-      class={`fixed bottom-0 w-full lg:bottom-2 md:w-[65%] lg:left-1/2 lg:-translate-x-1/2 z-50 lg:w-fit lg:rounded-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 ${
+      class={`fixed bottom-0 w-full lg:bottom-2 md:w-[65%] lg:left-1/2 lg:-translate-x-1/2 z-50 lg:w-fit lg:rounded-full h-16 bg-white border border-gray-dark dark:bg-gray-700 dark:border-text-l-500 ${
         !showEditor && "overflow-hidden"
       }
     `}
@@ -32,17 +32,17 @@ export const BottomNavigation = () => {
             setShowEditor(false);
           }}
           to="/"
-          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-gray-dark border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-text-l-500"
         >
           <TiHome
             size={20}
-            className={`group-hover:text-blue-600 transition-all duration-200 group-hover:scale-110 ${
-              selectedTab === "Home" ? "text-blue-600 scale-110" : ""
+            className={`group-hover:text-primary-600 transition-all duration-200 group-hover:scale-110 ${
+              selectedTab === "Home" ? "text-primary-600 scale-110" : ""
             }`}
           />
           <span
-            class={`text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 group-hover:scale-110 group-hover:text-blue-600 dark:group-hover:text-blue-500 ${
-              selectedTab === "Home" ? "text-blue-600 scale-110" : ""
+            class={`text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 group-hover:scale-110 group-hover:text-primary-600 dark:group-hover:text-blue-500 ${
+              selectedTab === "Home" ? "text-primary-600 scale-110" : ""
             }`}
           >
             Home
@@ -55,17 +55,17 @@ export const BottomNavigation = () => {
             setShowEditor(false);
           }}
           to="/notifications"
-          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-e border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-e border-gray-dark hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-text-l-500"
         >
           <GoBellFill
             size={20}
-            className={`group-hover:text-blue-600 transition-all duration-200 group-hover:scale-110 ${
-              selectedTab === "Notifications" ? "text-blue-600 scale-110" : ""
+            className={`group-hover:text-primary-600 transition-all duration-200 group-hover:scale-110 ${
+              selectedTab === "Notifications" ? "text-primary-600 scale-110" : ""
             }`}
           />
           <span
-            class={`text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 group-hover:scale-110 group-hover:text-blue-600 dark:group-hover:text-blue-500 ${
-              selectedTab === "Notifications" ? "text-blue-600 scale-110" : ""
+            class={`text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 group-hover:scale-110 group-hover:text-primary-600 dark:group-hover:text-blue-500 ${
+              selectedTab === "Notifications" ? "text-primary-600 scale-110" : ""
             }`}
           >
             Notifications
@@ -77,11 +77,11 @@ export const BottomNavigation = () => {
           setShowEditor(false);
         }}
         to="/create-post"
-          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-e text-blue-600 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600 group"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-e text-primary-600 border-gray-dark hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-text-l-500 group"
         >
           <BsPlusCircleFill
             size={36}
-            className={`group-hover:ring-4 transition-all duration-200 group-hover:scale-110 rounded-full ring-blue-200 ${
+            className={`group-hover:ring-4 transition-all duration-200 group-hover:scale-110 rounded-full ring-primary-500/20 ${
               selectedTab ==="AddPost" ? "ring-4 scale-110" : ""
             } `}
           />
@@ -96,13 +96,13 @@ export const BottomNavigation = () => {
         >
           <IoChatbubblesSharp
             size={20}
-            className={`group-hover:text-blue-600 transition-all duration-200 group-hover:scale-110 ${
-              selectedTab === "Chats" ? "text-blue-600 scale-110" : ""
+            className={`group-hover:text-primary-600 transition-all duration-200 group-hover:scale-110 ${
+              selectedTab === "Chats" ? "text-primary-600 scale-110" : ""
             }`}
           />
           <span
-            class={`text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 group-hover:scale-110 group-hover:text-blue-600 dark:group-hover:text-blue-500 ${
-              selectedTab === "Chats" ? "text-blue-600 scale-110" : ""
+            class={`text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 group-hover:scale-110 group-hover:text-primary-600 dark:group-hover:text-blue-500 ${
+              selectedTab === "Chats" ? "text-primary-600 scale-110" : ""
             }`}
           >
             Chats
@@ -114,17 +114,17 @@ export const BottomNavigation = () => {
             setShowEditor(false);
           }}
           to="/profile"
-          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-gray-600"
+          class="inline-flex flex-col items-center justify-center px-2 xl:px-5 border-gray-dark hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-text-l-500"
         >
           <FaCircleUser
             size={20}
-            className={`group-hover:text-blue-600 transition-all duration-200 group-hover:scale-110 ${
-              selectedTab === "Profile" ? "text-blue-600 scale-110" : ""
+            className={`group-hover:text-primary-600 transition-all duration-200 group-hover:scale-110 ${
+              selectedTab === "Profile" ? "text-primary-600 scale-110" : ""
             }`}
           />
           <span
-            class={`text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 group-hover:scale-110 group-hover:text-blue-600 dark:group-hover:text-blue-500 ${
-              selectedTab === "Profile" ? "text-blue-600 scale-110" : ""
+            class={`text-sm text-gray-500 dark:text-gray-400 transition-all duration-200 group-hover:scale-110 group-hover:text-primary-600 dark:group-hover:text-blue-500 ${
+              selectedTab === "Profile" ? "text-primary-600 scale-110" : ""
             }`}
           >
             Profile

@@ -67,12 +67,12 @@ export const RightSideBar = () => {
   }, []);
 
   return (
-    <aside class="relative z-50 px-4 h-screen  border-l border-slate-200 bg-slate-100 w-[35%] lg:w-72 hidden md:flex flex-col dark:bg-gray-700 dark:border-gray-600">
-      <ul class="flex justify-center items-center mt-4 space-x-6 sm:mt-0 h-16 border-b border-slate-200 dark:border-gray-600 dark:text-white">
+    <aside class="relative z-50 px-4 h-screen  border-l border-gray-dark bg-gray-light w-[35%] lg:w-72 hidden md:flex flex-col dark:bg-gray-700 dark:border-text-l-500">
+      <ul class="flex justify-center items-center mt-4 space-x-6 sm:mt-0 h-16 border-b border-gray-dark dark:border-text-l-500 dark:text-white">
         <li class="">
           <Link
             to="/profile"
-            class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 dark:border-gray-600 dark:text-black hover:text-black hover:shadow"
+            class="flex h-8 w-8 items-center justify-center rounded-xl border text-text-l-500 dark:border-text-l-500 dark:text-black hover:text-black hover:shadow"
           >
             <FaCircleUser size={20} />
           </Link>
@@ -80,7 +80,7 @@ export const RightSideBar = () => {
         <li class="relative">
           <Link
             to="/notifications"
-            class="flex h-8 w-8 items-center justify-center rounded-xl border text-gray-600 dark:border-gray-600 dark:text-black hover:text-black hover:shadow"
+            class="flex h-8 w-8 items-center justify-center rounded-xl border text-text-l-500 dark:border-text-l-500 dark:text-black hover:text-black hover:shadow"
           >
             <FaRegBell size={20} />
             {noticount > 0 && <span>{noticount}</span>}
@@ -89,7 +89,7 @@ export const RightSideBar = () => {
         <li class="">
           <button
             onClick={handleSignOut}
-            class="flex h-8 w-8 items-center justify-center rounded-xl border dark:border-gray-600 text-gray-600 dark:text-black hover:text-black hover:shadow"
+            class="flex h-8 w-8 items-center justify-center rounded-xl border dark:border-text-l-500 text-text-l-500 dark:text-black hover:text-black hover:shadow"
           >
             <LuDoorOpen size={20} />
           </button>
@@ -117,7 +117,7 @@ export const RightSideBar = () => {
           name="search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          class="h-12 w-full rounded-md border border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-600 py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
+          class="h-12 w-full rounded-md border border-gray-dark bg-white dark:bg-dark dark:border-text-l-500 py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
           placeholder="Search for user"
         />
       </div>

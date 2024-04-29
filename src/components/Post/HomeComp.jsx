@@ -86,10 +86,10 @@ export const HomeComp = () => {
 
   return (
     <section className="relative w-full overflow-y-auto hide-scroll h-full  dark:bg-gray-900 ">
-      <div className="fixed h-[64px] flex justify-center bg-slate-100 items-center pl-12  sm:pl-0 px-4 border-b w-full md:sticky z-10  top-0 left-0 border-slate-200 dark:border-gray-600 dark:bg-gray-700">
+      <div className="fixed h-[64px] flex justify-center bg-gray-light items-center pl-12  sm:pl-0 px-4 border-b w-full md:sticky z-10  top-0 left-0 border-gray-dark dark:border-text-l-500 dark:bg-gray-700">
         <label htmlFor="\" className=" relative">
           <svg
-            class="absolute left-2 top-3 ml-2 block h-5 w-5 text-gray-400"
+            class="absolute left-2 top-3 ml-2 block h-5 w-5 text-text-l-500"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -108,7 +108,7 @@ export const HomeComp = () => {
             name="search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            class="h-12 rounded-md border border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-600  xl:w-[540px] min-w-[300px] py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
+            class="h-12 rounded-md border border-gray-dark bg-white dark:bg-gray-900 dark:border-text-l-500  xl:w-[540px] min-w-[300px] py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500"
             placeholder="Search for anything"
           />
         </label>

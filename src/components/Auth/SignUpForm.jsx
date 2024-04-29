@@ -571,7 +571,7 @@ export const SignUpForm = () => {
                 type="text"
                 name="fullName"
                 {...register("fullName")}
-                className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-blue-500"
+                className="w-full border-b border-text-l-500 bg-transparent focus:outline-none focus:border-primary-500"
               />
             </div>
             <div className="flex flex-col">
@@ -583,7 +583,7 @@ export const SignUpForm = () => {
                   type="email"
                   name="email"
                   {...register("email")}
-                  className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-blue-500"
+                  className="w-full border-b border-text-l-500 bg-transparent focus:outline-none focus:border-primary-500"
                 />
               </div>
 
@@ -591,7 +591,7 @@ export const SignUpForm = () => {
                 <button
                   onClick={() => sendOtp()}
                   type="button"
-                  className="my-2 whitespace-nowrap h-fit p-2 px-4 bg-blue-500 hover:bg-blue-600 text-white rounded-xl"
+                  className="my-2 whitespace-nowrap h-fit p-2 px-4 bg-primary-500 hover:bg-primary-600 text-white rounded-xl"
                 >
                   Send Otp
                 </button>
@@ -610,13 +610,13 @@ export const SignUpForm = () => {
                     type="text"
                     name="otp"
                     {...register("otp")}
-                    className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-blue-500"
+                    className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-primary-500"
                   />
                 </div>
                 <button
                   type="button"
                   onClick={() => sendOtp()}
-                  className="my-2 whitespace-nowrap p-2 px-4 h-fit bg-blue-500 hover:bg-blue-600 text-white rounded-xl"
+                  className="my-2 whitespace-nowrap p-2 px-4 h-fit bg-primary-500 hover:bg-primary-600 text-white rounded-xl"
                 >
                   Resend Otp
                 </button>
@@ -630,7 +630,7 @@ export const SignUpForm = () => {
                 type="password"
                 name="password"
                 {...register("password")}
-                className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-blue-500"
+                className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-primary-500"
               />
             </div>
             <div className="mb-4">
@@ -641,11 +641,11 @@ export const SignUpForm = () => {
                 type="password"
                 name="confirmPassword"
                 {...register("confirmPassword")}
-                className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-blue-500"
+                className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-primary-500"
               />
             </div>
             <button
-              className="my-2 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl whitespace-nowrap"
+              className="my-2 p-2 bg-primary-500 hover:bg-primary-600 text-white rounded-xl whitespace-nowrap"
               type="submit"
             >
               Sign up
@@ -655,13 +655,13 @@ export const SignUpForm = () => {
               <p className="font-medium text-dark-grey">OR</p>
               <span className="h-[1.5px] w-full bg-dark-grey"></span>
             </div>
-            <button className="my-2 flex gap-1 items-center justify-center">
+            {/* <button className="my-2 flex gap-1 items-center justify-center">
               <FcGoogle size={20} />
               <span>Sign up with google</span>
-            </button>
+            </button> */}
             <p className="text-center">
               Already an user ?{" "}
-              <Link to="/signin" className="text-blue-500 hover:bg-blue-600">
+              <Link to="/signin" className="text-primary-500 hover:text-primary-600">
                 Sign in.
               </Link>
             </p>

@@ -542,7 +542,7 @@ export const LogInForm = () => {
                 type="email"
                 name="email"
                 {...register("email")}
-                className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-blue-500"
+                className="w-full border-b border-text-l-500 bg-transparent focus:outline-none focus:border-primary-500"
               />
             </div>
             <div className="mb-4">
@@ -553,11 +553,11 @@ export const LogInForm = () => {
                 type="password"
                 name="password"
                 {...register("password")}
-                className="w-full border-b border-slate-400 bg-transparent focus:outline-none focus:border-blue-500"
+                className="w-full border-b border-text-l-500 bg-transparent focus:outline-none focus:border-primary-500"
               />
             </div>
-            <button className="ml-auto text-blue-500 hover:text-blue-600">forgot pasword?</button>
-            <button className="my-2 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl">
+            <button className="ml-auto text-primary-500 hover:text-primary-600">forgot pasword?</button>
+            <button className="my-2 p-2 bg-primary-500 hover:bg-primary-600 text-white rounded-xl">
               Login
             </button>
             <div className="flex gap-1 my-1 items-center">
@@ -565,13 +565,13 @@ export const LogInForm = () => {
               <p className="font-medium text-slate-400">OR</p>
               <span className="h-[1.5px] w-full bg-slate-400"></span>
             </div>
-            <button className="my-2 flex gap-1 items-center justify-center">
+            {/* <button className="my-2 flex gap-1 items-center justify-center">
               <FcGoogle size={20} />
               <span>Sign in with google</span>
-            </button>
+            </button> */}
             <p className="text-center">
               Are you new ?{" "}
-              <Link to="/signup" className="text-blue-500 hover:text-blue-600">
+              <Link to="/signup" className="text-primary-500 hover:text-primary-600">
                 Create an account.
               </Link>
             </p>

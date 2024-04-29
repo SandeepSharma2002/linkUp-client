@@ -5,7 +5,7 @@ export const PostCardSkeleton = () => {
   return arr.map((index) => (
     <div
       role="status"
-      class="border-b border-slate-200 animate-pulse dark:border-gray-700"
+      class="border-b border-gray-dark animate-pulse dark:border-gray-700"
     >
       <div class="flex items-center my-4">
         <svg

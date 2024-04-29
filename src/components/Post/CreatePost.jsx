@@ -61,7 +61,7 @@ const CreatePost = ({ setShowEditor }) => {
         <button type="button" onClick={() => setShowEditor(false)}>
           <RxCross2
             size={20}
-            className=" hover:scale-110 rounded-full bg-slate-100 p-1"
+            className=" hover:scale-110 rounded-full bg-gray-light p-1"
           />
         </button>
       </div>
@@ -91,7 +91,7 @@ const CreatePost = ({ setShowEditor }) => {
         }}
       />
       <div className="flex gap-4 my-2">
-        <div className="flex flex-1 gap-4 mt-2 px-2 text-gray-600">
+        <div className="flex flex-1 gap-4 mt-2 px-2 text-text-l-500">
           <label className="text-lg">Topic:</label>
           <input
             type="text"
