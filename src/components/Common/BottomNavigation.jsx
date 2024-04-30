@@ -20,12 +20,12 @@ export const BottomNavigation = () => {
 
   return (
     <div
-      class={`fixed bottom-0 w-full lg:bottom-2 md:w-[65%] lg:left-1/2 lg:-translate-x-1/2 z-50 lg:w-fit lg:rounded-full h-16 bg-white border border-gray-dark dark:bg-gray-700 dark:border-text-l-500 ${
+      class={`fixed bottom-0 w-full lg:bottom-2 md:w-[65%] lg:left-1/2 lg:-translate-x-1/2 z-50 lg:w-fit lg:rounded-full h-16 bg-white border border-gray-dark dark:bg-bg-dark-1 dark:border-text-l-500 ${
         !showEditor && "overflow-hidden"
       }
     `}
     >
-      <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
+      <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium dark:text-white">
         <Link
           onClick={() => {
             setSelectedTab("Home");

@@ -27,7 +27,7 @@ export const WriteMessage = ({ chatId , receiver}) => {
   };
 
   return (
-    <div className="absolute bottom-0 pb-2 w-full bg-white flex gap-2 px-4 justify-center items-center mx-auto">
+    <div className="absolute bottom-0 pb-2 w-full flex gap-2 px-4 justify-center items-center mx-auto dark:bg-bg-dark-2">
       <div className="w-[90%] max-w-[640px]">
         <InputEmoji
           value={text}

@@ -12,7 +12,7 @@ import { ChatPage } from "./pages/Chat/ChatPage";
 
 const App = () => {
   return (
-    <div className="w-screen h-screen dark:bg-gray-900">
+    <div className="w-screen h-screen dark:bg-bg-dark-2">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomeLayout />}>

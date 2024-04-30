@@ -24,9 +24,12 @@ export default {
             'primary-700': '#0369a1',
             'text-l-600': '#4b5563',
             'text-l-500': '#6b7280',
-            'text-l-800': '',
+            'text-d-600': '#4b5563',
+            'text-d-500': '#6b7280',
             'gray-light': '#f1f5f9',
             'gray-dark': '#e2e8f0',
+            "bg-dark-1": "#374151",
+            "bg-dark-2": "#0f172a"
           },
         extend: {
             fontFamily: {

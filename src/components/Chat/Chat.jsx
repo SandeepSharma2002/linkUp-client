@@ -53,11 +53,11 @@ export const ChatComp = () => {
   return (
     <div class="mx-auto h-full overflow-y-auto dark:bg-gray-900 hide-scroll">
       <div
-        class="h-[64px] pl-16 flex justify-between items-center px-4  border-b w-full sticky z-40 bg-gray-light dark:bg-gray-700 dark:border-gray-500
+        class="h-[64px] pl-16 flex justify-between items-center px-4  border-b w-full sticky z-40 bg-gray-light dark:bg-bg-dark-1 dark:border-text-l-500
     top-0 left-0 border-gray-dark"
       >
-        <p class="text-xl font-bold text-primary-600 dark:text-white">Chats</p>
-        <button class="text-sm font-medium text-blue-700 focus:outline-none">
+        <p class="text-xl font-bold text-primary-600">Chats</p>
+        <button class="text-sm font-medium text-blue-700 focus:outline-none dark:text-gray-light">
           Chat Settings
         </button>
       </div>

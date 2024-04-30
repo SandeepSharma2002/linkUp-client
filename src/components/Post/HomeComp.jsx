@@ -85,8 +85,8 @@ export const HomeComp = () => {
   }, [activeTab, postRefresh, update]);
 
   return (
-    <section className="relative w-full overflow-y-auto hide-scroll h-full  dark:bg-gray-900 ">
-      <div className="fixed h-[64px] flex justify-center bg-gray-light items-center pl-12  sm:pl-0 px-4 border-b w-full md:sticky z-10  top-0 left-0 border-gray-dark dark:border-text-l-500 dark:bg-gray-700">
+    <section className="relative w-full overflow-y-auto hide-scroll h-full bg-transparent">
+      <div className="fixed h-[64px] flex justify-center bg-gray-light items-center pl-12  sm:pl-0 px-4 border-b w-full md:sticky z-10  top-0 left-0 border-gray-dark dark:border-text-l-500 dark:bg-bg-dark-1">
         <label htmlFor="\" className=" relative">
           <svg
             class="absolute left-2 top-3 ml-2 block h-5 w-5 text-text-l-500"
@@ -120,7 +120,7 @@ export const HomeComp = () => {
          </ul>
       ) : (
         <>
-          <ul className="mt-16 md:mt-0 px-4">
+          <ul className="mt-16 md:mt-0 px-4 bg-transparent">
             {postData?.map((post) => (
               <PostCard post={post} type={activeTab} key={post?._id} />
             ))}

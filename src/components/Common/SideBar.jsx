@@ -86,12 +86,12 @@ export const SideBar = () => {
         </label>
         <nav
           aria-label="Sidebar Navigation"
-          class="peer-checked:w-72 pb-16 left-0 z-10 flex h-screen w-0 border-r border-gray-dark flex-col overflow-hidden bg-gray-light text-white dark:bg-gray-700 dark:border-text-l-500 transition-all lg:h-screen lg:w-72"
+          class="peer-checked:w-72 pb-16 left-0 z-10 flex h-screen w-0 border-r border-gray-dark flex-col overflow-hidden bg-gray-light text-white dark:bg-bg-dark-1 dark:border-text-l-500 transition-all lg:h-screen lg:w-72 overflow-y-auto hide-scroll"
         >
           <Link to="/" class="my-4 mx-auto text-black">
             <img src={logo} alt="" srcset="" className="h-28" />
           </Link>
-          <h3 className="mt-10 text-3xl text-primary-600 font-medium pl-4">Friends List</h3>
+          <h3 className="mt-10 text-3xl text-primary-600 font-medium pl-4">Active Users</h3>
           <div className="flex flex-col gap-4 mt-2 px-4">
             {users.map((user) => (
               <FriendUserCard user={user} key={user.username} />

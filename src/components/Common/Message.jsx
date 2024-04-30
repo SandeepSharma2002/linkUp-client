@@ -36,7 +36,7 @@ export const MessageCard = ({ message, username }) => {
       <div
         class={`flex flex-col w-full max-w-[240px] leading-1.5 p-4 border-gray-dark  ${
           message.sender.username === username
-            ? "bg-gray-light border-gray-dark rounded-s-xl rounded-b-xl"
+            ? "bg-gray-light border-gray-dark rounded-s-xl rounded-b-xl dark:bg-bg-dark-1"
             : " bg-primary-600 border-primary-700 text-white rounded-e-xl rounded-es-xl"
         }  dark:bg-gray-700`}
       >
