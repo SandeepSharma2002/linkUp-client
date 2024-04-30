@@ -154,7 +154,7 @@ const handleTagChange = (e) => {
         class="h-[64px] flex justify-between items-center px-4 border-b w-full sticky z-50 bg-gray-light
     top-0 left-0 border-gray-dark dark:bg-bg-dark-1 dark:border-text-l-500"
       >
-        <p class="text-xl font-bold text-gray-700 dark:text-primary-600">
+        <p class="text-xl font-bold text-primary-600">
           Create Post
         </p>
       </div>
